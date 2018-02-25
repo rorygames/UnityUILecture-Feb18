@@ -1,6 +1,7 @@
 # Unity UI Lecture Feb 18
 
 Project for the material from the lecture demonstration.
+Remember to reference if anything is used in assignments.
 
 ## Useful information
 * Remember to use **UnityEngine.UI** to access UI elements in code.
