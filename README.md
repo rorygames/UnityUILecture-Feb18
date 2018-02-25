@@ -10,6 +10,7 @@ Remember to reference if anything is used in assignments.
 * Only public functions can be added to buttons through the editor, however you can add both private and public functions through code.
 * Using white icons will allow you to recolour them in the editor as you wish, using black ones will not.
 * If you set a UI elements position to stretch, you will not be able to access the Width and Height variables in code. Vice versa of you won't be able to access the edge values if you set the item to normal.
+* Using a single pixel white image for your backgrounds or buttons will yield better performance. Unity will batch render all the images of the same source and draw them together. Using no images will not allow this to occur.
 * If you're using text a lot, take look at using TextMeshPro instead of the default Unity Text. It uses shaders that dynamically set the resolution of the text (it ends up looking way better), and can also react to realtime lighting.
 * Not UI related, however when using Unity and Git/GitHub make sure to set your asset serialization to Force Text. This is found under **Edit -> Project Settings -> Asset Serialization**
 
