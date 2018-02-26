@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShapeSpawner : MonoBehaviour {
 
@@ -10,6 +11,9 @@ public class ShapeSpawner : MonoBehaviour {
 
     List<ShapeController> m_currentShapes = new List<ShapeController>();
 
+    Slider m_slider;
+
+    [SerializeField]
     float m_currentForce = 100f;
 
     // Shows the private field in the inspector
@@ -50,7 +54,7 @@ public class ShapeSpawner : MonoBehaviour {
     // Use start for objects that are not related to or part of the object
 	void Start ()
     {
-        
+        m_slider = GameObject.Find("Canvas/Slider").GetComponent<Slider>();
 	}
 
     private void Update()
@@ -105,7 +109,8 @@ public class ShapeSpawner : MonoBehaviour {
 
     public void ChangeExplodeForce(float _force)
     {
-        m_currentForce = _force * m_forceMultiplier;
+        m_currentForce = m_slider.value * m_forceMultiplier;
+
         foreach(ShapeController sc in m_currentShapes)
         {
             sc.ChangeForces(m_currentForce);
